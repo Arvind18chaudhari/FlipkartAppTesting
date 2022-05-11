@@ -35,4 +35,10 @@ public class IPhonePage extends BaseClass {
         System.out.println("********* verifying add to cart Button **********");
         return addToCartButton.isDisplayed();
     }
+
+    public GoToCartPage clickOnAddToCartButton(){
+        System.out.println("********* Clicking on Add to Cart Button **********");
+        addToCartButton.click();
+        return new GoToCartPage();
+    }
 }
