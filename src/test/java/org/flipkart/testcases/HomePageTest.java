@@ -11,7 +11,7 @@ public class HomePageTest extends BaseClass {
     public void test(){
         HomePage homePage = new HomePage();
         homePage.setCloseButton();
-        Assert.assertEquals(homePage.getPageTitle(),"Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
+        Assert.assertEquals(homePage.getPageTitle(),"1 Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
         homePage.setSearchText("iphone 13");
         Assert.assertTrue(homePage.isIphone13Displayed());
     }
