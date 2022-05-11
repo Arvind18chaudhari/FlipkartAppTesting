@@ -17,5 +17,7 @@ public class HomePageTest extends BaseClass {
         Assert.assertTrue(homePage.isIphone13Displayed());
         IPhonePage iPhonePage = homePage.clickOnIphone13();
         Assert.assertEquals(iPhonePage.getTitle(),"APPLE iPhone 13 ( 128 GB GB Storage, 0 GB RAM ) Online at Best Price On Flipkart.com");
+        Assert.assertTrue(iPhonePage.goToCartIsNotDisplayed());
+        Assert.assertTrue(iPhonePage.addToCartIsDisplayed());
     }
 }
