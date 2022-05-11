@@ -1,2 +1,18 @@
-package org.flipkart.testcases;public class HomePageTest {
+package org.flipkart.testcases;
+
+import org.flipkart.base.BaseClass;
+import org.flipkart.pages.HomePage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HomePageTest extends BaseClass {
+
+    @Test
+    public void test(){
+        HomePage homePage = new HomePage();
+        homePage.setCloseButton();
+        Assert.assertEquals(homePage.getPageTitle(),"Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
+        homePage.setSearchText("iphone 13");
+        Assert.assertTrue(homePage.isIphone13Displayed());
+    }
 }
