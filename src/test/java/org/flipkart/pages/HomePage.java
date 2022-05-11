@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.Set;
+
 public class HomePage extends BaseClass {
+    static String parent;
     @FindBy(xpath = "//button[@class='_2KpZ6l _2doB4z']")
     WebElement closeButton;
 
@@ -39,6 +42,18 @@ public class HomePage extends BaseClass {
     public boolean isIphone13Displayed(){
         System.out.println("********** Verifying iphone13 **********");
         return iPhone13.isDisplayed();
+    }
 
+    public IPhonePage clickOnIphone13(){
+        System.out.println("******** clicking on Iphone 13 blue model *******");
+        parent = driver.getWindowHandle();
+        iPhone13.click();
+        Set<String> set = driver.getWindowHandles();
+        for (String s: set) {
+            if(!s.equalsIgnoreCase(parent)){
+                driver.switchTo().window(s);
+            }
+        }
+        return new IPhonePage();
     }
 }
