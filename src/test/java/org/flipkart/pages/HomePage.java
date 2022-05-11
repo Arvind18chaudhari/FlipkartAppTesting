@@ -17,22 +17,28 @@ public class HomePage extends BaseClass {
 
     public HomePage(){
         PageFactory.initElements(driver,this);
+        System.out.println("********** Home Page initiated **********");
     }
 
     public void setCloseButton(){
         closeButton.click();
+        System.out.println("********** Pop up closed **********");
     }
 
     public String getPageTitle(){
+        System.out.println("********** Verifying title **********");
         return driver.getTitle();
     }
 
     public void setSearchText(String searchText){
         this.searchText.sendKeys(searchText);
         this.searchText.submit();
+        System.out.println("********** "+searchText+" entered **********");
     }
 
     public boolean isIphone13Displayed(){
+        System.out.println("********** Verifying iphone13 **********");
         return iPhone13.isDisplayed();
+
     }
 }
